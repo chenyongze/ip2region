@@ -1,7 +1,7 @@
 {
   "type": "library",
-  "name": "zoujingli/ip2region",
-  "homepage": "https://github.com/zoujingli/Ip2Region",
+  "name": "chenyongze/ip2region",
+  "homepage": "https://github.com/chenyongze/Ip2Region",
   "description": "Ip2Region",
   "license": "Apache 2.0",
   "keywords": [
