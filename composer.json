@@ -12,7 +12,7 @@
   },
   "autoload": {
     "classmap": [
-      "Ip2Region.php"
+      "src/Ip2Region.php"
     ]
   }
 }

@@ -28,7 +28,7 @@
 ### Composer 安装
 
 ```
-composer require zoujingli/ip2region
+composer require chenyongze/ip2region
 ```
 
 ### ip2region 使用

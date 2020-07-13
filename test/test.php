@@ -1,5 +1,6 @@
 <?php
-require 'Ip2Region.php';
+
+include dirname(__DIR__) . '/src/Ip2Region.php';
 
 $ip2region = new Ip2Region();
 
@@ -7,7 +8,7 @@ $ip = '101.105.35.57';
 
 $info = $ip2region->btreeSearch($ip);
 
-var_export($info, true);
+var_export($info, false);
 
 // array (
 //     'city_id' => 2163,

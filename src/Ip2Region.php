@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ip2region php seacher client class
  *
@@ -9,7 +10,8 @@
 defined('INDEX_BLOCK_LENGTH') or define('INDEX_BLOCK_LENGTH', 12);
 defined('TOTAL_HEADER_LENGTH') or define('TOTAL_HEADER_LENGTH', 4096);
 
-class Ip2Region {
+class Ip2Region
+{
     /**
      * db file handler
      */
@@ -41,8 +43,9 @@ class Ip2Region {
      *
      * @param    ip2regionFile
      */
-    public function __construct($ip2regionFile = null) {
-        $this->dbFile = is_null($ip2regionFile) ? __DIR__ . '/ip2region.db' : $ip2regionFile;
+    public function __construct($ip2regionFile = null)
+    {
+        $this->dbFile = is_null($ip2regionFile) ? dirname(__DIR__) . '/db/ip2region.db' : $ip2regionFile;
     }
 
     /**
@@ -53,7 +56,8 @@ class Ip2Region {
      *
      * @param   $ip
      */
-    public function memorySearch($ip) {
+    public function memorySearch($ip)
+    {
         //check and load the binary string for the first time
         if ($this->dbBinStr == NULL) {
             $this->dbBinStr = file_get_contents($this->dbFile);
@@ -108,7 +112,8 @@ class Ip2Region {
      * @param    ip
      * @return    mixed Array or NULL for any error
      */
-    public function binarySearch($ip) {
+    public function binarySearch($ip)
+    {
         //check and conver the ip address
         if (is_string($ip)) $ip = self::safeIp2long($ip);
         if ($this->totalBlocks == 0) {
@@ -176,7 +181,8 @@ class Ip2Region {
      * @param   ip
      * @return  Mixed Array for NULL for any error
      */
-    public function btreeSearch($ip) {
+    public function btreeSearch($ip)
+    {
         if (is_string($ip)) $ip = self::safeIp2long($ip);
 
         //check and load the header
@@ -306,7 +312,8 @@ class Ip2Region {
      *
      * @param ip
      * */
-    public static function safeIp2long($ip) {
+    public static function safeIp2long($ip)
+    {
         $ip = ip2long($ip);
 
         // convert signed int to unsigned int if on 32 bit operating system
@@ -324,13 +331,13 @@ class Ip2Region {
      * @param    b
      * @param    offset
      */
-    public static function getLong($b, $offset) {
+    public static function getLong($b, $offset)
+    {
         $val = (
             (ord($b[$offset++])) |
             (ord($b[$offset++]) << 8) |
             (ord($b[$offset++]) << 16) |
-            (ord($b[$offset]) << 24)
-        );
+            (ord($b[$offset]) << 24));
 
         // convert signed int to unsigned int if on 32 bit operating system
         if ($val < 0 && PHP_INT_SIZE == 4) {
@@ -343,7 +350,8 @@ class Ip2Region {
     /**
      * destruct method, resource destroy
      */
-    public function __destruct() {
+    public function __destruct()
+    {
         if ($this->dbFileHandler != NULL) {
             fclose($this->dbFileHandler);
         }
@@ -353,5 +361,3 @@ class Ip2Region {
         $this->HeaderPtr = NULL;
     }
 }
-
-?>
