@@ -1,7 +1,7 @@
-[![Latest Stable Version](https://poser.pugx.org/zoujingli/ip2region/v/stable)](https://packagist.org/packages/zoujingli/ip2region)
-[![Total Downloads](https://poser.pugx.org/zoujingli/ip2region/downloads)](https://packagist.org/packages/zoujingli/ip2region)
-[![Latest Unstable Version](https://poser.pugx.org/zoujingli/ip2region/v/unstable)](https://packagist.org/packages/zoujingli/ip2region)
-[![License](https://poser.pugx.org/zoujingli/ip2region/license)](https://packagist.org/packages/zoujingli/ip2region)
+[![Latest Stable Version](https://poser.pugx.org/chenyongze/ip2region/v/stable)](https://packagist.org/packages/chenyongze/ip2region)
+[![Total Downloads](https://poser.pugx.org/chenyongze/ip2region/downloads)](https://packagist.org/packages/chenyongze/ip2region)
+[![Latest Unstable Version](https://poser.pugx.org/chenyongze/ip2region/v/unstable)](https://packagist.org/packages/chenyongze/ip2region)
+[![License](https://poser.pugx.org/chenyongze/ip2region/license)](https://packagist.org/packages/chenyongze/ip2region)
 
 
 本库基于 [ip2region](https://github.com/lionsoul2014/ip2region) ，简单整合方便使用`composer`来管理。
